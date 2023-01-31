@@ -23,8 +23,17 @@
         public string ProfileImg { get; set; }
         public string Address { get; set; }
 
-        //Relationships
+        /// <summary>
+        /// Relationships
+        /// </summary>
         public List<Appointment> Appointments { get; set; }
         public List<Institution> Institutions { get; set; }
+
+        public void ViewAppointments(Appointment appointment) { }
+        public void BookAppointment(Appointment appointment) { }
+        public void RescheduleAppointment(Appointment appointment) { }
+        public void CancelAppointment(Appointment appointment) { }
+        public void AppointmentStatus(string status) { } // Complete or not [return Boolean value]
+        public void UpdateProfile() { } // Allow Patient to update ONLY their profileImg
     }
 }

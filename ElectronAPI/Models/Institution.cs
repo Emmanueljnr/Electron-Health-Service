@@ -20,5 +20,21 @@
         //Relationships
         public List<Doctor> Doctors { get; set; } //1 institution will have many Doctors 
         public List<Patient> Patients { get; set; } //1 institution will have many patients
+
+        public List<Appointment> Appointments { get; set; } //1 institution will have multiple appointments 
+
+
+        public void hireDoctor() { }
+        public void fireDoctor() { }
+        public void ViewPatients() { }
+        public void designatePatients() { } //assign particular patients to a particular doctor
+        public void PrescribeMedication() { } //return a simple string for now
+        public void ViewAppointments(Appointment appointment) { }
+        public void AppointmentStatus(string status) { } // Complete or No show, Waiting, Rescheduled.. [return Boolean value] - Once ViewPatients has run, change AppointmentStatus
+        public void doctorAvailability(string availability) { }
+        public void BookAppointment(Appointment appointment) { } //book a new appointment
+        public void RescheduleAppointment(Appointment appointment, DateTime newDateTime) { }
+        public void CancelAppointment(Appointment appointment) { }
+        public void UpdateProfile() { } // Allow Patient to update ONLY their profileImg
     }
 }

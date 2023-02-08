@@ -33,9 +33,7 @@
         public void PrescribeMedication() { } //return a simple string for now
         public void ViewAppointments(Appointment appointment) { }
         public void doctorAvailability(string availability) { }
-        public void BookAppointment(Appointment appointment) {
-            Console.Write("THIS");
-        } //book a follow up/routine appointment with a patient
+        public void BookAppointment(Appointment appointment) {} //book a follow up/routine appointment with a patient
         public void RescheduleAppointment(Appointment appointment, DateTime newDateTime) { }
         public void CancelAppointment(Appointment appointment) { }
         public void UpdateProfile() { } // Allow Patient to update ONLY their profileImg

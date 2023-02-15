@@ -1,6 +1,9 @@
-﻿namespace ElectronAPI.Models
+﻿using ElectronAPI.Models.Abstract_Classes;
+using ElectronAPI.Models.Interfaces;
+
+namespace ElectronAPI.Models
 {
-    public class Patient
+    public class Patient : User, IAppointmentManager
     {
         public Patient(int id, string name, string email, int phoneNumber, char bloodtype, char gender, string profileimg, string address)
         {
@@ -12,8 +15,12 @@
             Gender = gender;
             ProfileImg = profileimg;
             Address = address;
+
+            Appointments = new List<Appointment>();
+            Institutions = new List<Institution>();
         }
 
+        #region Properties
         public int PatientId { get; private set; }
         public string Name { get; set; }
         public string Email { get; set; }
@@ -22,18 +29,43 @@
         public char Gender { get; set; }
         public string ProfileImg { get; set; }
         public string Address { get; set; }
+        #endregion
 
-        /// <summary>
-        /// Relationships
-        /// </summary>
+        #region Relationships
         public List<Appointment> Appointments { get; set; }
         public List<Institution> Institutions { get; set; }
+        public int PrimaryDoctorId { get; set; }
+        public Doctor PrimaryDoctor { get; set; }
+        #endregion
 
-        public void ViewAppointments(Appointment appointment) { }
-        public void BookAppointment(Appointment appointment) { }
-        public void RescheduleAppointment(Appointment appointment) { }
-        public void CancelAppointment(Appointment appointment) { }
-        public void AppointmentStatus(string status) { } // Complete or not [return Boolean value]
-        public void UpdateProfile() { } // Allow Patient to update ONLY their profileImg
+        public override void AppointmentStatus()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void BookAppointment()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void CancelAppointment()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void RescheduleAppointment()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void UpdateProfile()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ViewAppointments()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

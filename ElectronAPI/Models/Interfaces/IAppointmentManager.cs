@@ -1,11 +1,11 @@
 ﻿namespace ElectronAPI.Models.Interfaces
 {
-    public interface IAppointmentManager
+    public interface IAppointmentManager : IProfileManager
     {
-        public void BookAppointment();
-        public void viewAppointments();
-        public void appointmentStatus();
-        public void cancelAppointment();
-        public void rescheduleAppointment();
+        void BookAppointment();
+        void ViewAppointments();
+        void CancelAppointment();
+        void RescheduleAppointment(); 
+        void AppointmentStatus(); // Gives User the ability to View & Edit the appointment Status depending on [Doctor / Patient ]
     }
 }

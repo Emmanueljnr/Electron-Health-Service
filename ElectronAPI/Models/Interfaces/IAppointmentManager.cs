@@ -2,7 +2,6 @@
 {
     public interface IAppointmentManager
     {
-        public void updateProfile();
         public void BookAppointment();
         public void viewAppointments();
         public void appointmentStatus();

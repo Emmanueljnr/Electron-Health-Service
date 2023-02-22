@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ElectronAPI.Models;
+using ElectronAPI.Models.Users;
 
 namespace ElectronConsoleApplication
 {
@@ -11,8 +11,8 @@ namespace ElectronConsoleApplication
     {
         static void Main(string[] args)
         {
-            Doctor doctor01 = new Doctor();
-
+            //Nurse Nurse01 = new Nurse();
+            Console.WriteLine("Hi, I am the Nurse object");
         }
     }
 }

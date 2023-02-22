@@ -2,8 +2,9 @@
 
 namespace ElectronAPI.Models.Abstract_Classes
 {
-    public abstract class User : IProfileManager, IAppointmentManager
+    public abstract class User
     {
+        #region constructor
         public User(int id, string name, string email, int phoneNumber, string profileImg, string address)
         {
             Id = id;
@@ -13,6 +14,7 @@ namespace ElectronAPI.Models.Abstract_Classes
             ProfileImg = profileImg;
             Address = address;
         }
+        #endregion
 
         #region Properties
         public int Id { get; private set; }
@@ -33,7 +35,7 @@ namespace ElectronAPI.Models.Abstract_Classes
 
         public virtual void UpdateProfile() 
         {
-            ProfileImg = "https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg";
+            //ProfileImg = "https://t4.ftcdn.net/jpg/02/60/04/09/360_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg";
         }
 
         public abstract void ViewAppointments();

@@ -1,41 +1,39 @@
 ﻿using ElectronAPI.Models.Abstract_Classes;
+using ElectronAPI.Models.Interfaces;
 
-namespace ElectronAPI.Models
+namespace ElectronAPI.Models.Users
 {
-    public class Institution : User
+    public class Patient : User
     {
-        public Institution(int id, string name, string email, int phoneNumber, string address)
+        public Patient(int id, string name, string email, int phoneNumber, string profileImg, string address) : base(id, name, email, phoneNumber, profileImg, address)
         {
-            InstitutionId = id;
+            PatientId = id;
             Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
+            ProfileImg = profileImg;
             Address = address;
 
-            Doctors = new List<Doctor>();
-            Patients = new List<Patient>();
             Appointments = new List<Appointment>();
+            //Institutions = new List<Institution>();
         }
 
         #region Properties
-        public int InstitutionId { get; private set; }
+        public int PatientId { get; private set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
+        public char BloodType { get; set; }
+        public char Gender { get; set; }
+        public string ProfileImg { get; set; }
         public string Address { get; set; }
         #endregion
 
         #region Relationships
-        public List<Doctor> Doctors { get; set; } //1 institution will have many Doctors 
-        public List<Patient> Patients { get; set; } //1 institution will have many patients
-        public List<Appointment> Appointments { get; set; } //1 institution will have multiple appointments 
-        #endregion
-
-        public void HireDoctor() { }
-        public void FireDoctor() { }
-        public void ViewPatients() { }
-        public void DesignatePatients() { } 
-        public void PrescribeMedication() { }
+        public List<Appointment> Appointments { get; set; }
+        public int PrimaryDoctorId { get; set; }
+        public Doctor? PrimaryDoctor { get; set; }
+         #endregion
 
         public override void AppointmentStatus()
         {
@@ -53,11 +51,6 @@ namespace ElectronAPI.Models
         }
 
         public override void RescheduleAppointment()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void UpdateProfile()
         {
             throw new NotImplementedException();
         }

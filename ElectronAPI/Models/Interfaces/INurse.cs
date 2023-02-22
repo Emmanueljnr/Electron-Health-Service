@@ -1,11 +1,11 @@
 ﻿namespace ElectronAPI.Models.Interfaces
 {
-    public interface IDoctor
+    public interface INurse
     {
-        void PrescribeMedication();
+        void AdministerMedication();
+        void UpdateVitalSigns();
         void ViewPatientHistory();
         void UpdatePatientHistory();
         void ViewLabResults();
-        void AddLabResult();
     }
 }

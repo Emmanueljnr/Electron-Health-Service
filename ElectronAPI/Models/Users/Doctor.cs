@@ -1,9 +1,9 @@
 ﻿using ElectronAPI.Models.Abstract_Classes;
 using ElectronAPI.Models.Interfaces;
 
-namespace ElectronAPI.Models
+namespace ElectronAPI.Models.Users
 {
-    public class Doctor : User, IDoctor
+    public class Doctor
     {
         public Doctor(int id, string name, string email, int phoneNumber, char gender, string profileImg, string address)
         {
@@ -11,7 +11,7 @@ namespace ElectronAPI.Models
             Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
-            Gender = gender; 
+            Gender = gender;
             ProfileImg = profileImg;
             Address = address;
 
@@ -36,39 +36,6 @@ namespace ElectronAPI.Models
         public List<Appointment> Appointments { get; set; } //1 doctor has many appointments 
         #endregion
 
-        public override void AppointmentStatus()
-        {
-            throw new NotImplementedException();
-        }
 
-        public override void BookAppointment()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void CancelAppointment()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void PrescribeMedication()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void RescheduleAppointment()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void UpdateProfile()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ViewAppointments()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
